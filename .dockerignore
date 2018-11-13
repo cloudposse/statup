@@ -15,3 +15,5 @@ dev
 !build/alpine-linux-amd64
 config.yml
 statup.db
+codefresh
+deploy

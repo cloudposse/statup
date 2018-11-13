@@ -1,3 +1,6 @@
+$(shell test ! -f .build-harness && curl -sSL -o .build-harness "https://git.io/build-harness")
+-include .build-harness
+
 VERSION=0.79.6
 BINARY_NAME=statup
 GOPATH:=$(GOPATH)
@@ -216,7 +219,7 @@ dev-deps:
 	$(GOCMD) get github.com/oliveroneill/exponent-server-sdk-golang/sdk
 
 # remove files for a clean compile/build
-clean:
+clean::
 	rm -rf ./{logs,assets,plugins,statup.db,config.yml,.sass-cache,config.yml,statup,build,.sass-cache,statup.db,index.html,vendor}
 	rm -rf cmd/{logs,assets,plugins,statup.db,config.yml,.sass-cache,*.log}
 	rm -rf core/{logs,assets,plugins,statup.db,config.yml,.sass-cache,*.log}
