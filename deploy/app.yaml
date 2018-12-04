@@ -37,7 +37,7 @@ releases:
     # Override values for this release
     values:
       - image:
-          repository: r.cfcr.io/cloudposse/statup
+          repository: '{{ requiredEnv "IMAGE_NAME" }}'
           tag: '{{ requiredEnv "IMAGE_TAG" }}'
           pullPolicy: Always
           pullSecrets:
